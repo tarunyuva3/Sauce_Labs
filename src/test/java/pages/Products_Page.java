@@ -14,113 +14,86 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Products_Page
-{
-    public WebDriver driver;
-    public WebDriverWait wait;
-    List<Double> numeric_prices;
-    Select sel;
+public class Products_Page {
 
-    public Products_Page(WebDriver driver)
-    {
-        this.driver=driver;
-        this.wait=new WebDriverWait(driver,Duration.ofSeconds(10));
-        PageFactory.initElements(driver,this);
+    WebDriver driver;
+    WebDriverWait wait;
+    List<WebElement> prices;
 
+    public Products_Page(WebDriver driver) {
+        this.driver = driver;
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//select[@class='product_sort_container']")
-    WebElement sort;
+    @FindBy(className = "product_sort_container")
+    WebElement sortDropdown;
 
-    @FindBy(xpath = "//div[@class='inventory_item_price']")
-    List<WebElement> priceList;
-
-    @FindBy(xpath = "//select[@class='product_sort_container']")
-    WebElement newSort;
-
-    @FindBy(xpath ="//div[@class='inventory_item_name']")
-    List<WebElement> rev;
-
-    //clicking sort button
-    public void click_sort()
+    public void sortByPriceLowToHigh()
     {
-        wait.until(ExpectedConditions.elementToBeClickable(sort)).click();
-    }
-    public void apply_filter_Price_low_to_high()
-    {
-        sel= new Select(sort);
-        sel.selectByValue("lohi");
+        Select select = new Select(sortDropdown);
+        select.selectByValue("lohi");
 
+        // Wait until products refresh
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.className("inventory_item_price")));
     }
 
-   //stored all prices in the list (Low to High)
-    public void store_all_prices_in_list()
+    public void collectpricesintolist()
     {
-        numeric_prices= new ArrayList<>();
-        for(WebElement prices_element : priceList)
-        {
-            String prices_text=prices_element.getText().replace("$","");
-            numeric_prices.add(Double.parseDouble(prices_text));
-            System.out.println("Found price: " + prices_text);
+         prices= driver.findElements(
+                By.className("inventory_item_price"));
+    }
+
+    public void verifyPricesLowToHigh()
+    {
+        List<Double> numericPrices = new ArrayList<>();
+
+        for (WebElement price : prices) {
+            numericPrices.add(
+                    Double.parseDouble(price.getText().replace("$", "")));
         }
-    }
 
-    //checking all the prices are sorted correctly
-    public void check_all_prices_of_low_to_high()
-    {
-        for (int i = 0; i < numeric_prices.size() - 1; i++)
-        {
-            double current = numeric_prices.get(i);
-            double next = numeric_prices.get(i + 1);
-
-            if (current > next)
-            {
-                Assert.fail("Prices are NOT in ascending order! Found " + current + " before " + next);
-            }
+        for (int i = 0; i < numericPrices.size() - 1; i++) {
+            Assert.assertTrue(
+                    "Prices not in ascending order",
+                    numericPrices.get(i) <= numericPrices.get(i + 1)
+            );
         }
+        System.out.println("all prices are in ascending order");
     }
 
-    //now select Name(Z to A) in the sort option and check whether the names are in reverse alphabetical order
-    public void reverse_alphabetical_order()
+    public void sortByNameZtoA()
     {
+        Select select = new Select(sortDropdown);
+        select.selectByValue("za");
 
-        // 1. Wait for the old sort element (which was used for 'lohi') to become stale
-        wait.until(ExpectedConditions.stalenessOf(sort));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.className("inventory_item_name")));
 
-        // 2. Find the fresh sort element after the page update
-        //WebElement newSort = driver.findElement(By.xpath("//select[@class='product_sort_container']"));
+        System.out.println("Sorted By reverse alphabetical order");
+    }
 
-        // 3. Create a new Select object with the fresh reference
-        Select sc = new Select(newSort);
-
-        // 4. Perform the new selection
-        sc.selectByValue("za");
-
-        System.out.println("Successfully changed sort to Name (Z to A).");
+    public void verifyNamesZtoA()
+    {
+        List<WebElement> names = driver.findElements(
+                By.className("inventory_item_name"));
 
         List<String> actualNames = new ArrayList<>();
 
-        for (WebElement element : rev) {
-            actualNames.add(element.getText());
-            System.out.println("Product Name: " + element.getText());
+        for (WebElement name : names)
+        {
+            actualNames.add(name.getText());
         }
 
-        // 2. Verify descending order
         for (int i = 0; i < actualNames.size() - 1; i++) {
-            String current = actualNames.get(i);
-            String next = actualNames.get(i + 1);
-
-            // compareTo returns < 0 if current is alphabetically before next
-            if (current.compareTo(next) < 0) {
-                Assert.fail("Names are NOT in descending order! Found '" + current + "' before '" + next + "'");
-            }
+            Assert.assertTrue(
+                    "Names not in reverse alphabetical order",
+                    actualNames.get(i).compareTo(
+                            actualNames.get(i + 1)) >= 0
+            );
         }
-
-        System.out.println("Assertion Passed: Names are in reverse alphabetical order.");
+        System.out.println("All names are arranged u=in reverse alphabetical order");
     }
-
 }
-
-
-
 
