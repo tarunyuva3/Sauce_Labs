@@ -21,5 +21,13 @@ Feature: Validation of Login Page and sorting products and verify order
       And check that the badge number shows 2 now
       Then click on cart page and assert the items you added
 
+    Scenario: End to End flow
+      Given login with correct credentials username"standard_user" and password"secret_sauce"
+      When logged in successfully find Sauce Labs Backpack and add it to cart
+      And click on cart button and click checkout
+      And Fill the form with First Name "John" Last Name "Doe" and a Zip Code "12345".Then click continue
+      Then check for the total amount and capture it
+      Then click finish assert it shows "Thank you for your order!"
+
 
 
