@@ -10,8 +10,12 @@ features = "src/test/resources/features",
         glue={"stepDefinitions"},
         plugin = {
                 "pretty",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
-        }
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+                "html:target/CucumberReports/CucumberReport.html"
+        },
+        dryRun=false,
+        monochrome=true,
+        publish=true
 )
 public class TestRunner
 {

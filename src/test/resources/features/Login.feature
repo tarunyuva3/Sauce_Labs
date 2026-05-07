@@ -13,6 +13,13 @@ Feature: Validation of Login Page and sorting products and verify order
       And Check for the prices in the list whether they are in ascending order lower then then the next one otherwise the test is failed
       Then click sorting filter Name(Z to A ) and verify they are in reverse alphabetical order
 
+    Scenario: verification of cart badge
+      Given login with correct credentials username"standard_user" and password"secret_sauce"
+      When login successfully add 3 items to cart
+      And check if the number is 3 on cart image
+      And remove one item from the cart
+      And check that the badge number shows 2 now
+      Then click on cart page and assert the items you added
 
-      fgisgfusfsfhsaofhsafac
+
 
