@@ -14,5 +14,5 @@ Feature: Validation of Login Page and sorting products and verify order
       Then click sorting filter Name(Z to A ) and verify they are in reverse alphabetical order
 
 
-      fgisgfusfsfhsaofhsafac
+
 
