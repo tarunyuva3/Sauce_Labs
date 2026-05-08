@@ -71,5 +71,15 @@ Feature: Validation of Login Page and sorting products and verify order
         Then verify detail page title matches "Sauce Labs Backpack"
         And print current page URL and title
 
+      Scenario: Cross-User Cart Isolation
+        Given login as "standard_user" with "secret_sauce"
+        And add 2 items to the cart
+        When logout from the application
+        Then login as "problem_user" with "secret_sauce"
+        And verify cart is empty
+        When add 1 item to cart and logout
+        Then login as "standard_user" with "secret_sauce"
+        And verify cart is empty
+
 
 

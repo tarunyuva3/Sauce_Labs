@@ -1,0 +1,743 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">May 8, 2026 12:25:27 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Validation of Login Page and sorting products and verify order</p>
+            <p class="text-sm">
+              <span>12:25:28 PM</span> / <span>00:02:44:583</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Validation of Login Page and sorting products and verify order</h5>
+<span class='badge badge-success'>05.08.2026 12:25:28 PM</span>
+<span class='badge badge-danger'>05.08.2026 12:28:12 PM</span>
+<span class='badge badge-default'>00:02:44:583</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Login Validations(Positive and Negative)</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.Scenario1.openingpage()">
+                <span>Given Open the Website and website and you can see the username,password and login button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario1.justloginbuttonpress()">
+                <span>When click the login button without entering any username or password</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario1.invalid_credentials_check(java.lang.String,java.lang.String)">
+                <span>And Type "standard_user" in the username field then type wrong password "password123" click login you should see a error message</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario1.try_for_locked_out_user_and_correct_password_then_it_will_show_as_locked_user(java.lang.String,java.lang.String)">
+                <span>And try "locked_out_user" for locked out user and correct password "secret_sauce" then it will show as locked user</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario1.successful_login(java.lang.String,java.lang.String)">
+                <span>Then enter correct "standard_user" and "secret_sauce" then login</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="10"><span class="badge log pass-bg mr-2">Pass</span>Sort Products & Verify Order</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.Scenario2.to_navigate_to_sauce_demo_username_and_password_and_click_on_name_a_z_dropdown_for_sorting_options(java.lang.String,java.lang.String)">
+                <span>Given To Navigate to Sauce Demo Username "standard_user" and Password "secret_sauce" and click on Name(A-Z) dropdown for sorting options</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario2.name_a_z_is_clicked_select_price_low_to_high_and_click_that_so_items_will_be_rearranged()">
+                <span>When Name(A-Z) is clicked select price (Low to High) and click that so items will be rearranged</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario2.collect_all_the_price_mentioned_into_a_list()">
+                <span>And collect all the price mentioned into a list</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario2.check_for_the_prices_in_the_list_whether_they_are_in_ascending_order_lower_then_then_the_next_one_otherwise_the_test_is_failed()">
+                <span>And Check for the prices in the list whether they are in ascending order lower then then the next one otherwise the test is failed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario2.click_sorting_filter_name_z_to_a_and_verify_they_are_in_reverse_alphabetical_order()">
+                <span>Then click sorting filter Name(Z to A ) and verify they are in reverse alphabetical order</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="18"><span class="badge log pass-bg mr-2">Pass</span>verification of cart badge</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.Scenario3.loginWithCorrectCredentialsUsernameAndPassword(java.lang.String,java.lang.String)">
+                <span>Given login with correct credentials username"standard_user" and password"secret_sauce"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario3.loginSuccessfullyAddItemsToCart()">
+                <span>When login successfully add 3 items to cart</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario3.checkIfTheNumberIs3OnCartImage()">
+                <span>And check if the number is 3 on cart image</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario3.removeOneItemFromTheCart()">
+                <span>And remove one item from the cart</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario3.checkThatTheBadgeNumberShowsNow()">
+                <span>And check that the badge number shows 2 now</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario3.clickOnCartPageAndAssertTheItemsYouAdded()">
+                <span>Then click on cart page and assert the items you added</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="27"><span class="badge log pass-bg mr-2">Pass</span>End to End flow</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.Scenario3.loginWithCorrectCredentialsUsernameAndPassword(java.lang.String,java.lang.String)">
+                <span>Given login with correct credentials username"standard_user" and password"secret_sauce"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario4.loggedInSuccessfullyFindSauceLabsBackpackAndAddItToCart()">
+                <span>When logged in successfully find Sauce Labs Backpack and add it to cart</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario4.clickOnCartButtonAndClickCheckout()">
+                <span>And click on cart button and click checkout</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario4.fillTheFormWithFirstNameLastNameAndAZipCodeThenClickContinue(java.lang.String,java.lang.String,java.lang.String)">
+                <span>And Fill the form with First Name "John" Last Name "Doe" and a Zip Code "12345".Then click continue</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario4.checkForTheTotalAmountAndCaptureIt()">
+                <span>Then check for the total amount and capture it</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario4.clickFinishAssertItShows(java.lang.String)">
+                <span>Then click finish assert it shows "Thank you for your order!"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="36"><span class="badge log pass-bg mr-2">Pass</span>Product detail page verification</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.Scenario3.loginWithCorrectCredentialsUsernameAndPassword(java.lang.String,java.lang.String)">
+                <span>Given login with correct credentials username"standard_user" and password"secret_sauce"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario5.youClickOnAProductNameItShouldTakeYouToItsPage(java.lang.String)">
+                <span>When you click on a product name "Bolt T-Shirt" it should take you to its page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario5.checkWhetherAllDetailsNamePriceAndDescriptionAreVisibleAndAlsoCheckIfItsTheSameProduct()">
+                <span>And check whether all details name price and description are visible and also check if its the same product</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario5.clickAddToCart()">
+                <span>Then click add to cart</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario5.checkTheCartBadgeShowsNumber()">
+                <span>Then check the cart badge shows number 1</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario5.clickBackToProductsWillBeRedirectedToHomepageAssertThatTheURLAndThePageHeadingAreCorrect()">
+                <span>Then click Back to products will be redirected to homepage  Assert that the URL and the page heading are correct</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="45"><span class="badge log pass-bg mr-2">Pass</span>Cart Persistence & Remove Items</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.Scenario3.loginWithCorrectCredentialsUsernameAndPassword(java.lang.String,java.lang.String)">
+                <span>Given login with correct credentials username"standard_user" and password"secret_sauce"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario6.clickAddToCartForAnyDifferentProducts()">
+                <span>Then Click Add to cart for any 2 different products</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario6.clickOnOneOfTheProductsToGoToItsDetailPageThenClickBackToProductsToReturn()">
+                <span>Then Click on one of the products to go to its detail page,then click Back to products to return</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario6.assertThatTheCartBadgeStillShows()">
+                <span>Then Assert that the cart badge still shows 2</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario6.goToCartPageAndClickRemoveForAnyOneOfTheItem()">
+                <span>Then go to cart page and click remove for any one of the item</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario6.assertTheRemainingItemTheOneThatYouDidNotRemove()">
+                <span>Then assert the remaining item the one that you did not remove</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario6.verifyIfTheDetailsLikeNameAndPriceAreDisplayed()">
+                <span>And verify if the details like name and price are displayed</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="55"><span class="badge log pass-bg mr-2">Pass</span>Logout & Session Validation</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.Scenario3.loginWithCorrectCredentialsUsernameAndPassword(java.lang.String,java.lang.String)">
+                <span>Given login with correct credentials username"standard_user" and password"secret_sauce"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario7.clickOnThreeHorizintalLinesLeftSideAndClickLogout()">
+                <span>Then click on three horizintal lines left side and click logout</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario7.assertThatYouAreBackOnHomepageByCheckingUrlAndTitle()">
+                <span>Then assert that you are back on homepage by checking url and Title</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario7.inTheAddressBarManuallyTypeAndClickEnter(java.lang.String)">
+                <span>Then in the address bar manually type "https://www.saucedemo.com/inventory.html" and click enter</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario7.assertThatAppAutomaticallyRedirectsYouToLoginPageInsteadOfProductsPage()">
+                <span>Then assert that app automatically redirects you to login page instead of products page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="63"><span class="badge log pass-bg mr-2">Pass</span>Compare User Load Times</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.Scenario8.recordStartTime()">
+                <span>Given record start time</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario8.loginAsWith(java.lang.String,java.lang.String)">
+                <span>When login as "performance_glitch_user" with "secret_sauce"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario8.waitForProductsPageAndCalculateLoadTime()">
+                <span>Then wait for products page and calculate load time</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario8.verifyLoadTimeIsUnderSeconds()">
+                <span>And verify load time is under 10 seconds</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario8.logoutAndLoginAsAnd(java.lang.String,java.lang.String)">
+                <span>Then logout and login as "standard_user" and "secret_sauce"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario8.compareBothLoadTimesForPerformanceDifference()">
+                <span>And compare both load times for performance difference</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="72"><span class="badge log pass-bg mr-2">Pass</span>Visual Validation and Image Consistency</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.Scenario8.loginAsWith(java.lang.String,java.lang.String)">
+                <span>Given login as "standard_user" with "secret_sauce"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario9.findAllProductImagesAndVerifyTheyAreNotBroken()">
+                <span>Then find all product images and verify they are not broken</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario9.checkThatImageAltTextMatchesProductName()">
+                <span>And check that image alt text matches product name</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario9.clickOnTheImageOf(java.lang.String)">
+                <span>When click on the image of "Sauce Labs Backpack"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario9.verifyDetailPageTitleMatches(java.lang.String)">
+                <span>Then verify detail page title matches "Sauce Labs Backpack"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario9.printCurrentPageURLAndTitle()">
+                <span>And print current page URL and title</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="81"><span class="badge log fail-bg mr-2">Fail</span>Cross-User Cart Isolation</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.Scenario8.loginAsWith(java.lang.String,java.lang.String)">
+                <span>Given login as "standard_user" with "secret_sauce"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario10.addItemsToTheCart(int)">
+                <span>And add 2 items to the cart</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario10.logoutFromTheApplication()">
+                <span>When logout from the application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.Scenario8.loginAsWith(java.lang.String,java.lang.String)">
+                <span>Then login as "problem_user" with "secret_sauce"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepDefinitions.Scenario10.verifyCartIsEmpty()">
+                <span>And verify cart is empty</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: Cart is NOT empty! Items were leaked from the previous session.
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at pages.Cross_user_Page.verifyCartBadgeNotPresent(Cross_user_Page.java:48)
+	at stepDefinitions.Scenario10.verifyCartIsEmpty(Scenario10.java:25)
+	at ✽.verify cart is empty(file:///C:/Users/2457388/IdeaProjects/Sauce_Labs_Cucu/src/test/resources/features/Login.feature:79)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepDefinitions.Scenario10.addItemToCartAndLogout(int)">
+                <span>When add 1 item to cart and logout</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepDefinitions.Scenario8.loginAsWith(java.lang.String,java.lang.String)">
+                <span>Then login as "standard_user" with "secret_sauce"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepDefinitions.Scenario10.verifyCartIsEmpty()">
+                <span>And verify cart is empty</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>12:28:02 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='87'>And verify cart is empty</a>
+<div class="">
+<span class="badge badge-default">Validation of Login Page and sorting products and verify order.Cross-User Cart Isolation.And verify cart is empty</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>May 8, 2026 12:25:27 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>May 8, 2026 12:28:12 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>0</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>1</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='100%'><b>1</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='90%'><b>9</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='10%'><b>1</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='93%'><b>56</b> steps passed</small></div>
+<div>
+<small data-tooltip='1%'><b>1</b> steps failed,
+<b>3</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Validation of Login Page and sorting products and verify order":164.583
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Tester</td>
+<td>Tarun</td>
+</tr>
+<tr>
+<td>Environment</td>
+<td>QA</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 0,
+failParent: 1,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 9,
+failChild: 1,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 56,
+failGrandChild: 1,
+warningGrandChild: 0,
+skipGrandChild: 3,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
