@@ -15,7 +15,8 @@ features = "src/test/resources/features",
         },
         dryRun=false,
         monochrome=true,
-        publish=true
+        publish=false
+
 )
 public class TestRunner
 {
