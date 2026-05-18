@@ -11,15 +11,18 @@ import pages.Login_Page;
 
 public class Scenario3 {
 
-    public WebDriver driver = Hooks.driver;
+    public WebDriver driver;
 
-    // Initializing Page Objects
-    Cart_Page cartPage = new Cart_Page(driver);
-    Login_Page login = new Login_Page(driver);
+    // Initializing Page Objects safely inside methods
+    Cart_Page cartPage;
+    Login_Page login;
 
     @Given("login with correct credentials username{string} and password{string}")
     public void loginWithCorrectCredentialsUsernameAndPassword(String user, String pass)
     {
+        driver = Hooks.driver;
+        cartPage = new Cart_Page(driver);
+        login = new Login_Page(driver);
         login.username_field(user);
         login.password_field(pass);
         login.login_button();
@@ -52,9 +55,6 @@ public class Scenario3 {
     @Then("click on cart page and assert the items you added")
     public void clickOnCartPageAndAssertTheItemsYouAdded()
     {
-        // Click the cart icon
-        driver.findElement(By.className("shopping_cart_link")).click();
-        // Verify final 2 items count and names (hardcoded logic)
         cartPage.verifyFinalCartContents();
     }
 }

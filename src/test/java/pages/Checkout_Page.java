@@ -5,18 +5,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class End_to_End_Page
-{
+import java.time.Duration;
+
+public class Checkout_Page {
     WebDriver driver;
+    WebDriverWait wait;
 
-    public End_to_End_Page(WebDriver driver)
-    {
+    public Checkout_Page(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
     }
 
-    // Locators
     @FindBy(id = "add-to-cart-sauce-labs-backpack")
     WebElement backpackAddBtn;
 
@@ -47,43 +50,37 @@ public class End_to_End_Page
     @FindBy(className = "complete-header")
     WebElement confirmationMsg;
 
-    // Actions
-    public void addBackpack() throws InterruptedException
-    {
-        backpackAddBtn.click();
-        Thread.sleep(2000);
+    public void addBackpack() {
+        wait.until(ExpectedConditions.elementToBeClickable(backpackAddBtn)).click();
     }
 
-    public void goToCheckout() throws InterruptedException
-    {
-        cartBtn.click();
-        Thread.sleep(1000);
-        checkoutBtn.click();
-        Thread.sleep(1000);
+    public void goToCheckout() {
+        wait.until(ExpectedConditions.elementToBeClickable(cartBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(checkoutBtn)).click();
     }
 
-    public void fillInformation(String fname, String lname, String zip) throws InterruptedException
-    {
-        firstNameField.sendKeys(fname);
+    public void fillInformation(String fname, String lname, String zip) {
+        wait.until(ExpectedConditions.visibilityOf(firstNameField)).sendKeys(fname);
         lastNameField.sendKeys(lname);
         zipCodeField.sendKeys(zip);
-        Thread.sleep(1000);
         continueBtn.click();
-        Thread.sleep(2000);
     }
 
-    public void captureTotal()
-    {
+    public void captureTotal() {
+        wait.until(ExpectedConditions.visibilityOf(totalLabel));
         String totalText = totalLabel.getText();
         System.out.println("Captured Total: " + totalText);
         Assert.assertTrue(totalText.contains("Total:"));
     }
 
-    public void finishAndVerify(String expectedMsg) throws InterruptedException
-    {
-        finishBtn.click();
-        Thread.sleep(2000);
+    public void clickFinish() {
+        wait.until(ExpectedConditions.elementToBeClickable(finishBtn)).click();
+    }
+
+    public void verifyConfirmation(String msg) {
+        wait.until(ExpectedConditions.visibilityOf(confirmationMsg));
         String actualMsg = confirmationMsg.getText();
-        Assert.assertEquals(expectedMsg, actualMsg);
+        Assert.assertEquals(msg, actualMsg);
+        System.out.println("Order Completed: " + actualMsg);
     }
 }

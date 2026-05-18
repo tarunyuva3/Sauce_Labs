@@ -3,30 +3,31 @@ package stepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.Visual_verification_Page;
+import pages.Products_Page;
 
 public class Scenario9 {
 
-    Visual_verification_Page visualPage = new Visual_verification_Page(Hooks.driver);
+    Products_Page productPage;
 
     @Then("find all product images and verify they are not broken")
     public void findAllProductImagesAndVerifyTheyAreNotBroken() {
-        visualPage.verifyImagesNotBroken();
+        productPage = new Products_Page(Hooks.driver);
+        productPage.verifyImagesNotBroken();
     }
 
     @And("check that image alt text matches product name")
     public void checkThatImageAltTextMatchesProductName() {
-        visualPage.verifyAltTextMatches();
+        productPage.verifyAltTextMatches();
     }
 
     @When("click on the image of {string}")
     public void clickOnTheImageOf(String productName) {
-        visualPage.clickImageByName(productName);
+        productPage.clickImageByName(productName);
     }
 
     @Then("verify detail page title matches {string}")
     public void verifyDetailPageTitleMatches(String expectedName) {
-        visualPage.verifyDetailTitle(expectedName);
+        productPage.verifyDetailPageTitle(expectedName);
     }
 
     @And("print current page URL and title")

@@ -2,16 +2,15 @@ package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
-import pages.Cross_user_Page;
-import pages.Login_Page; // Ensure this matches your login page class name
+import pages.Cart_Page;
 
 public class Scenario10 {
 
-    Cross_user_Page cartPage = new Cross_user_Page(Hooks.driver);
-    Login_Page loginPage = new Login_Page(Hooks.driver);
+    Cart_Page cartPage;
 
     @And("add {int} items to the cart")
     public void addItemsToTheCart(int count) {
+        cartPage = new Cart_Page(Hooks.driver);
         cartPage.addMultipleItems(count);
     }
 
@@ -31,5 +30,3 @@ public class Scenario10 {
         cartPage.performLogout();
     }
 }
-
-

@@ -16,7 +16,7 @@ public class Scenario1 {
     @Given("Open the Website and website and you can see the username,password and login button")
     public void openingpage()
     {
-        login =new Login_Page(driver);
+        login = new Login_Page(driver);
         // Simple console verification to ensure the driver is on the correct page
         System.out.println("Page Title: " + driver.getTitle());
     }
@@ -48,9 +48,5 @@ public class Scenario1 {
         login.username_field(username);
         login.password_field(password);
         login.login_button();
-        System.out.println("Login sequence completed for: " + username);
-
-
     }
-
 }

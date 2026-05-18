@@ -2,14 +2,15 @@ package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import pages.Cart_persistence_Page;
+import pages.Cart_Page;
 
 public class Scenario6 {
 
-    Cart_persistence_Page cartPage = new Cart_persistence_Page(Hooks.driver);
+    Cart_Page cartPage;
 
     @Then("Click Add to cart for any 2 different products")
     public void clickAddToCartForAnyDifferentProducts() throws InterruptedException {
+        cartPage = new Cart_Page(Hooks.driver);
         cartPage.addTwoProducts();
     }
 

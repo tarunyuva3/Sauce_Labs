@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,15 +10,16 @@ import pages.Products_Page;
 
 public class Scenario2
 {
-    public WebDriver driver=Hooks.driver;
+    public WebDriver driver;
     Login_Page login;
     Products_Page pd;
 
     @Given("To Navigate to Sauce Demo Username {string} and Password {string} and click on Name\\(A-Z) dropdown for sorting options")
     public void to_navigate_to_sauce_demo_username_and_password_and_click_on_name_a_z_dropdown_for_sorting_options(String user, String pass)
     {
+        driver = Hooks.driver;
         login = new Login_Page(driver);
-        pd= new Products_Page(driver);
+        pd = new Products_Page(driver);
         login.username_field(user);
         login.password_field(pass);
         login.login_button();
@@ -37,12 +39,11 @@ public class Scenario2
     {
         pd.verifyPricesLowToHigh();
     }
+
     @Then("click sorting filter Name\\(Z to A ) and verify they are in reverse alphabetical order")
-    public void click_sorting_filter_name_z_to_a_and_verify_they_are_in_reverse_alphabetical_order()
+    public void clickSortingFilterNameZToAAndVerifyTheyAreInReverseAlphabeticalOrder()
     {
         pd.sortByNameZtoA();
         pd.verifyNamesZtoA();
     }
-
-
 }
