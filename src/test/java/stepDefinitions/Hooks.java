@@ -1,44 +1,33 @@
 package stepDefinitions;
 
-
+import base.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+// 1. Import Log4j2 classes
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.util.HashMap;
-import java.util.Map;
+public class Hooks {
+    // 2. Declare the logger instance for this class
+    private static final Logger log = LogManager.getLogger(Hooks.class);
 
-public class Hooks
-{
     public static WebDriver driver;
+
     @Before
-    public void setup()
-    {
-        ChromeOptions options = new ChromeOptions();
+    public void setup() {
+        // Now 'log' will work perfectly!
+        log.info("-------------------- STARTING SCENARIO SETUP --------------------");
+        log.info("Reading runtime configuration properties via ConfigReader...");
 
-        // Create a Map to store preferences
-        Map<String, Object> prefs = new HashMap<String, Object>();
-
-        // This specific line disables the 'Data Breach' popup
-        prefs.put("profile.password_manager_leak_detection", false);
-
-        // You might also want to disable the general password manager save prompt
-        prefs.put("credentials_enable_service", false);
-        prefs.put("profile.password_manager_enabled", false);
-
-        options.setExperimentalOption("prefs", prefs);
-        options.addArguments("--disable-blink-features=AutomationControlled");
-        options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
-
-        driver = new ChromeDriver(options);
+        DriverFactory.initDriver();
+        driver = DriverFactory.getDriver();
         driver.get("https://www.saucedemo.com/");
-        driver.manage().window().maximize();
     }
+
     @After
-    public void breakdown()
-    {
-        driver.quit();
+    public void breakdown() {
+        log.info("-------------------- TEARING DOWN SCENARIO --------------------");
+        DriverFactory.quitDriver();
     }
 }
